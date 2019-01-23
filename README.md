@@ -6,9 +6,9 @@ Version 1.0
 Last updated: 12/6/2018
 
 ## Authors
-Ga Young Lee [Email](gayounglee@my.ccsu.edu)
-Benjamin Marshalkowski [Email](mailto:benjamin.marshalkowski@my.ccsu.edu)
-Daniel Rollins [Email](mailto:dan@sdcsol.com)
+* Ga Young Lee [Email](gayounglee@my.ccsu.edu)
+* Benjamin Marshalkowski [Email](mailto:benjamin.marshalkowski@my.ccsu.edu)
+* Daniel Rollins [Email](mailto:dan@sdcsol.com)
 
 ## What is it?
 The Climate Change Explorer is a browser-based application 
