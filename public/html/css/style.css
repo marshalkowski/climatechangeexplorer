@@ -1,0 +1,116 @@
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  /*position: fixed;*/
+  height: 100vh;
+}
+
+/* Optional: Makes the sample page fill the window.
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}*/
+
+#dialogwindow {
+  position: absolute;
+  top: 20%;
+  left: 25%;
+  width: 50%;
+  color: black;
+  text-align: center;
+  padding: 20px;
+  display: none;
+  z-index: 300;
+}
+
+.dialogrow {
+  width: 100%;
+  text-align: center;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.dialogelement {
+  margin: auto;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 72px 6px 0px 12px; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+.climatenav {
+  z-index: 200;
+}
+
+.fittedrow {
+  margin: 0px;
+  /*margin-left: 0px;
+  margin-right: 0px;*/
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: block; /* Shown by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 900; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlayblock {
+  position: absolute;
+  width: 375px;
+  margin: 100px auto;
+  left: 0;
+  right: 0;
+}
+
+#chartwindow
+{
+  display: none;
+  position: fixed;
+  z-index: 400;
+  width: 80%;
+  /*height: 80%;*/
+  top: 10%;
+  left: 10%;
+}
+
+.sidebar-footer
+{
+  position: absolute;
+  bottom: 0;
+  left: 10;
+}
+
+label.btn.btn-dark.active {
+  background-color: #0275d8 !important;
+  border-color: #0275d8 !important;
+}
+
+div.btn-group-vertical {
+    margin: 0 auto;
+    text-align: center;
+    /*width: inherit;*/
+    display: inline-block;
+}
+
+@media only screen and (max-width: 576px) {
+  #dialog {
+    left: 12.5%;
+    width: 75%;
+  }
+}

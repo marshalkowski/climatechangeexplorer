@@ -1,0 +1,82 @@
+<!-- NOTICE: You'll need to replace the 
+  placeholder near the bottom of the file 
+  with your Google Maps API Key -->
+  
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Climate Change Explorer - Team 3</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+    <script src="js/googlemap.js"></script>
+    <script src="js/overlay.js"></script>
+    <script src="js/dialog.js"></script>
+    <script src="js/visualization.js"></script>
+    <script src="js/stationmarkers.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  
+  <body>
+    <div id="overlay">
+      <div class="overlayblock card">
+        <div class="card-body">
+          <h3 class="card-title">Climate Change Explorer</h3>
+          <p>Navigate around the map and click a location. Confirm your selection to view temperature trends in that area.</p>
+          <button class="diabutton btn btn-primary" onclick="toggleOverlay()">Let's Get Started!</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="chartwindow" class="card">
+      <div class="card-body">
+        <button class="btn btn-outline-dark btn-sm" onclick="closeChart()">CLOSE</button>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+    <div id="dialogwindow" class="card">
+      <div class="card-body">
+        <div id="dialogtext" class="row dialogrow"></div>
+        <div class="row dialogrow">
+          <button class="btn btn-danger btn-vert-block dialogelement" onclick="dialogCancel()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row fittedrow">
+      <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+        <div class="sidebar-sticky">
+          <h4 class="sidebar-heading">Climate Change Explorer</h4>
+          <h5 class="sidebar-heading mt-5">How it works</h5>
+          <p>Navigate around the map and click a location. Confirm your selection to view temperature trends in that area.</p>
+          <h5 class="sidebar-heading mt-3">Temperature scale</h5>
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-dark active">
+              <input type="radio" name="options" id="tempScaleOpt1" autocomplete="off" checked> Farenheit
+            </label>
+            <label class="btn btn-dark">
+              <input type="radio" name="options" id="tempScaleOpt2" autocomplete="off"> Celcius
+            </label>
+          </div>
+          <h5 class="sidebar-heading mt-3">View stations</h5>
+          <button class="btn btn-primary" onclick="toggleStationMarkers()">Toggle</button>
+        </div>
+        <div class="sidebar-footer">
+        	<p>Data from noaa.gov<br>Graphs powered by chart.js</p>
+        </div>
+      </nav>
+      <main role="main" id="map" class="col-md-9 ml-sm-auto col-lg-9"></main>
+    </div>
+  
+    <!-- Replace APIKEY below with your GoogleMaps API Key -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap"
+    async defer></script>
+  </body>
+
+</html>
